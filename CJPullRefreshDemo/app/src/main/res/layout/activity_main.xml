@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sj.cjpullrefreshdemo.MainActivity">
+
+    <com.example.sj.cjpullrefreshdemo.view.CJVerticalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.sj.cjpullrefreshdemo.view.HeadView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#654125" />
+
+        <com.example.sj.cjpullrefreshdemo.view.MyListView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.example.sj.cjpullrefreshdemo.view.FootView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="#988866" />
+
+
+
+    </com.example.sj.cjpullrefreshdemo.view.CJVerticalScrollView>
+
+</LinearLayout>
