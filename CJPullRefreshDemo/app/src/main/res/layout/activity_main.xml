@@ -15,8 +15,10 @@
             android:background="#654125" />
 
         <com.example.sj.cjpullrefreshdemo.view.MyListView
+            android:id="@+id/mylistview"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:overScrollMode="never"
+            android:layout_height="match_parent" />
 
         <com.example.sj.cjpullrefreshdemo.view.FootView
             android:layout_width="match_parent"

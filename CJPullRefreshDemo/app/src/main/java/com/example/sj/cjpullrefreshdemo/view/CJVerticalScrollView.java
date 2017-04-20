@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,9 +57,11 @@ public class CJVerticalScrollView extends ViewGroup{
 
     @Override
     protected void onLayout(boolean b, int i, int i1, int i2, int i3) {
-        int childTop = 0;
+        /*int childTop = 0;
         final int childCount = getChildCount();
         Log.v("tag","childCount----> " +childCount);
+
+
 
         for(int j = 0; j < childCount; j++){
             final View childview = getChildAt(j);
@@ -68,11 +71,49 @@ public class CJVerticalScrollView extends ViewGroup{
                 childview.layout(0,childTop,childview.getMeasuredWidth(),childTop + childHeight);
                 childTop += childHeight;
             }
-        }
+        }*/
+        HeadLayout();
+        ListViewLayout();
+        FootLayout(i3);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+    }
+
+    private void HeadLayout(){
+        final View childView = getChildAt(0);
+        final int childHeight = childView.getMeasuredHeight();
+        childView.layout(0, - childHeight,childView.getMeasuredWidth(),0);
+    }
+    private void ListViewLayout(){
+        final View childView = getChildAt(1);
+        final int childHeight = childView.getMeasuredHeight();
+        childView.layout(0,0,childView.getMeasuredWidth(),childHeight);
+    }
+
+    private void FootLayout(int t){
+        final View childView = getChildAt(2);
+        final int childHeight = childView.getMeasuredHeight();
+        childView.layout(0, t ,childView.getMeasuredWidth(),t + childHeight);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.v("tag","onInterceptTouchEvent CJVerticalScrollView");
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.v("tag","dispatchTouchEvent CJVerticalScrollView");
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.v("tag","onTouchEvent CJVerticalScrollView");
+        return super.onTouchEvent(event);
     }
 }
